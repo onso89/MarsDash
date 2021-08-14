@@ -1,8 +1,16 @@
+import { Map, List } from 'immutable';
+// console.log(Map)
 let store = {
     user: { name: "Student" },
     apod: '',
     rovers: ['Curiosity', 'Opportunity', 'Spirit'],
 }
+
+// let store = Map({
+//     user: { name: "Student" },
+//     apod: '',
+//     rovers: ['Curiosity', 'Opportunity', 'Spirit'],
+// })
 
 // add our markup to the page
 const root = document.getElementById('root')
@@ -22,7 +30,15 @@ const App = (state) => {
     let { rovers, apod } = state
 
     return `
-        <header></header>
+    <header class="header" role="banner">
+        <a class="brand" href="#">MarsDash</a>
+        <nav class="navbar">
+        <ul class="nav-links">
+            <li><a class="nav-link" href="#">about</a></li>
+            <li><a class="nav-link" href="#">contact</a></li>
+        </ul>
+        </nav>
+    </header>
         <main>
             ${Greeting(store.user.name)}
             <section>
@@ -97,9 +113,10 @@ const ImageOfTheDay = (apod) => {
 const getImageOfTheDay = (state) => {
     let { apod } = state
 
-    fetch(`https://r950324c957034xreactr0lcusuk-3000.udacity-student-workspaces.com/apod`)
+    fetch(`http://localhost:3000/apod`)
         .then(res => res.json())
         .then(apod => updateStore(store, { apod }))
 
     return data
 }
+
