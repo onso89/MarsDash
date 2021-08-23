@@ -1,12 +1,15 @@
-import { Map, List } from 'immutable';
-// console.log(Map)
+
 let store = {
     user: { name: "Student" },
     apod: '',
     rovers: ['Curiosity', 'Opportunity', 'Spirit'],
 }
 
-// let store = Map({
+let ex =  Immutable.Map({
+    roverImages: ''
+})
+
+// let store = Immutable.Map({
 //     user: { name: "Student" },
 //     apod: '',
 //     rovers: ['Curiosity', 'Opportunity', 'Spirit'],
@@ -85,9 +88,7 @@ const ImageOfTheDay = (apod) => {
     // If image does not already exist, or it is not from today -- request it again
     const today = new Date()
     const photodate = new Date(apod.date)
-    console.log(photodate.getDate(), today.getDate());
 
-    console.log(photodate.getDate() === today.getDate());
     if (!apod || apod.date === today.getDate() ) {
         getImageOfTheDay(store)
     }
@@ -117,6 +118,6 @@ const getImageOfTheDay = (state) => {
         .then(res => res.json())
         .then(apod => updateStore(store, { apod }))
 
-    return data
+    // return data
 }
 
