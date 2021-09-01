@@ -27,12 +27,8 @@ const render = async (root, state) => {
     root.innerHTML = App(state)
 }
 
-
-// create content
-const App = (state) => {
-    let { rovers, apod } = state
-
-    return `
+const Header = () =>{
+    return `    
     <header class="header" role="banner">
         <a class="brand" href="#">MarsDash</a>
         <nav class="navbar">
@@ -41,20 +37,26 @@ const App = (state) => {
             <li><a class="nav-link" href="#">contact</a></li>
         </ul>
         </nav>
-    </header>
+    </header>`
+}
+// create content
+const App = (state) => {
+    let { rovers, apod } = state
+
+    return `
+        ${Header()}
         <main>
             ${Greeting(store.user.name)}
             <section>
-                <h3>Put things on the page!</h3>
-                <p>Here is an example section.</p>
                 <p>
-                    One of the most popular websites at NASA is the Astronomy Picture of the Day. In fact, this website is one of
-                    the most popular websites across all federal agencies. It has the popular appeal of a Justin Bieber video.
-                    This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other
-                    applications. In addition, if the concept_tags parameter is set to True, then keywords derived from the image
-                    explanation are returned. These keywords could be used as auto-generated hashtags for twitter or instagram feeds;
-                    but generally help with discoverability of relevant imagery.
+                    Select one of the rovers to see photos from Mars
                 </p>
+                <div class="rovers-row">
+                    <div class="rover-card">
+                    </div>
+                    <div class="rover-card">
+                    <div class="rover-card">
+                </div>
                 ${ImageOfTheDay(apod)}
             </section>
         </main>
