@@ -59,6 +59,15 @@ main {
   padding: 20px;
 }
 
+.rovers-row {
+  display: grid;
+  grid-row-gap: 1em;
+  grid-column-gap: 3em;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  width: 100%;
+  margin: 0;
+}
+
 a[href]:hover,
 a:hover > * {
   color: #00ccff;

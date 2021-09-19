@@ -11,11 +11,45 @@
 </head>
 
 <body>
-    <main>
-        <div id="root">
-            <h1>Loading...</h1>
-        </div>
-    </main>
+  <div class="site">
+    <header class="header" role="banner">
+      <a class="brand" href="#">MarsDash</a>
+      <nav class="navbar">
+        <ul class="nav-links">
+            <li class="nav-link"><a  href="#">about</a></li>
+            <li class="nav-link"><a  href="#">contact</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+      <main>
+          <section>
+              <p>
+                  Select one of the rovers to see photos from Mars
+              </p>
+              <div class="rovers-row">
+                  <div class="rover-card">
+                    <a href="index.html" class="card-title">
+                      Element 1
+                    </a>
+                  </div>
+                  <div class="rover-card">
+                    <a href="index.html" class="card-title">
+                      Element 2
+                    </a>
+                  </div>
+                  <div class="rover-card">
+                    <a href="index.html" class="card-title">
+                      Element 3
+                    </a>
+                  </div>
+                </div>
+          </section>
+      </main>
+      <footer></footer>
+  </main>
+  </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js" integrity="sha256-/2QRv/wHzmPJLRB351+bVXYjGU2Tk/bLfOt8XiVcmAg=" crossorigin="anonymous"></script>
     <script type="module" src="/client.js" ></script>
 </body>
